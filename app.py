@@ -46,7 +46,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/api_test', methods=['POST', 'GET'])
+@app.route('/api/receive', methods=['POST'])
 def api():
     print("requested")
     data = request.get_json(force=True)
@@ -86,7 +86,7 @@ def handle_mqtt_message(client, userdata, message):
         payload=message.payload.decode(),
         qos=message.qos,
     )
-    print(data)
+    print(data['payload'])
     socketio.emit('mqtt_message', data=data)
 
 
@@ -97,4 +97,4 @@ def handle_logging(client, userdata, level, buf):
 
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000, use_reloader=False, debug=True)
+    socketio.run(app, host='0.0.0.0', port=3000, use_reloader=False, debug=True)

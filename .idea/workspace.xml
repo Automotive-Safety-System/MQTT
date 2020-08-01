@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2a30917-6e07-4ff8-971b-206b18b5161e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Main-Server/gradproj/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Main-Server/gradproj/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Main-Server/gradproj/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Main-Server/gradproj/routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +52,9 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -61,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596047425031</updated>
-      <workItem from="1596047431021" duration="29859000" />
+      <workItem from="1596047431021" duration="35482000" />
     </task>
     <servers />
   </component>
