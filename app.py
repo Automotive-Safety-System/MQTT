@@ -12,6 +12,7 @@ from flask_mqtt import Mqtt
 from flask_socketio import SocketIO
 from flask_bootstrap import Bootstrap
 import ast
+from helpers import parse_for_OTA
 
 eventlet.monkey_patch()
 
@@ -59,12 +60,18 @@ def api():
 @socketio.on('publish')
 def handle_publish(json_str):
     data = json.loads(json_str)
+    if data['topic'] == "accident/ota/":
+        message = parse_for_OTA()
+        for item in message:
+            print(item)
+            mqtt.publish(data['topic'], item, data['qos'])
+
     # print(data)
     # print(data['message'] + "\n")
     # message = ast.literal_eval(data['message'])
     # print(message['id'])
-
-    mqtt.publish(data['topic'], data['message'], data['qos'])
+    else:
+        mqtt.publish(data['topic'], data['message'], data['qos'])
 
 
 @socketio.on('subscribe')
